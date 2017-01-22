@@ -166,7 +166,7 @@
                 'height'   => '80',
                 'title'    => __('Logo', 'mhmovieslite-opciones'),
                 'desc'     => __('Busca el logo de tu sitio..', 'mhmovieslite-opciones'),
-                'subtitle' => __('Sube el logo del sitio web', 'mhmovieslite-opciones'),
+                'subtitle' => __('Sube el logo del sitio web. Tamaño recomendado 150x50', 'mhmovieslite-opciones'),
             ),
             array(
                 'id'       => 'header-code',
