@@ -3,10 +3,8 @@
 <?php if($mhmovies_lite['color-fondo'] != '') { ?>
 body {background-color:<?php echo $mhmovies_lite['color-fondo']; ?>;}
 <?php } ?>
-<?php if($mhmovies_lite['color-principal'] != '') { ?>
-.navbar-inverse {background-color:<?php echo $mhmovies_lite['color-principal']; ?>;}
-<?php } ?>
 <?php if ($mhmovies_lite['color-principal'] != '') { ?>
+.navbar-inverse {background-color:<?php echo $mhmovies_lite['color-principal']; ?>;}
 .navbar-inverse .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {background-color: <?php echo $mhmovies_lite['color-principal']; ?>;}
 a {color: <?php echo $mhmovies_lite['color-principal']; ?>;}
 a:hover, a:focus {color: <?php echo $mhmovies_lite['color-secundario']; ?>;}

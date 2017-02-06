@@ -70,14 +70,14 @@ footer {
 }
 .navbar-brand {
     float: left;
-    font-size: 19px;
+    font-size: 1.5em;
     height: 60px;
     line-height: 21px;
     vertical-align: middle;
 }
 .navbar-brand > img {
     float: left;
-    font-size: 19px;
+    font-size: 1.5em;
     height: 60px;
     line-height: 21px;
     margin: -16px 0px 0px 0px;
@@ -87,4 +87,15 @@ footer {
     clear: both;
     margin-top: 0;
     display: inline-block;
+}
+.caption {
+    height: 30px;
+    overflow: hidden;
+}
+.caption > h4 {
+    font-size: 1.1em;
+}
+.info {
+    font-size: 1.3em;
+    display: inline;
 }

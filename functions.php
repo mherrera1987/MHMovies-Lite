@@ -88,7 +88,7 @@ function remove_editor_init() {
 add_action('wp_footer', 'copyright');
 function copyright() {
 
-$copyright_notice = "Desarrollado por <a href='http://marceloherrera.com.ar'>Marcelo Herrera</a>";
+$copyright_notice = "Desarrollado con <a href='http://marceloherrera.com.ar'>MHMovies Lite</a>";
 
 echo $copyright_notice;
 
@@ -146,5 +146,30 @@ function registrar_sidebar(){
    'after_title' => '</h2>',  
   ));  
 }  
-add_action( 'widgets_init', 'registrar_sidebar');  
+add_action( 'widgets_init', 'registrar_sidebar');
+
+//Acortar el título
+function titulo_corto($title, $n){
+	if ( strlen ($title) > $n )
+	{
+		echo substr(the_title("","", FALSE), 0, $n) . '…';
+	}
+		else { the_title(); }
+}
+
+//Mostrar cantidad de comentarios
+function comentarios(){
+	if ( get_comments_number() == 0 )
+	{
+		echo "Sin comentarios";
+	}
+	elseif ( get_comments_number() >= 1 )
+	{
+		echo get_comments_number(), " comentario";
+	}
+	else
+	{
+		echo get_comments_number(), " comentarios";
+	}		
+}
 ?>

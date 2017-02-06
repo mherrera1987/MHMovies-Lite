@@ -1,7 +1,7 @@
 <?php $categories = get_the_category($post->ID); if ($categories) { $category_ids = array(); foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id; $args=array( 'category__in' => $category_ids, 'post__not_in' => array($post->ID), 'showposts'=>3, 'orderby' => rand, 'caller_get_posts'=>1 );
 	$my_query = new wp_query( $args );
 	if( $my_query->have_posts() ) {
-		echo '<div class="posts-relacionados"><h3>'.__('Películas Relacionadas','mh').'</h3>';
+		echo '<div class="posts-relacionados"><h2>'.__('Películas Relacionadas','mh').'</h2>';
 		while( $my_query->have_posts() ) { ++$counter; if($counter == 3) { $post_class = 'last'; $counter = 0; } else { $post_class = ''; } $my_query->the_post();?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class('col-md-3 col-sm-3 pbox'); ?>>
 					<?php

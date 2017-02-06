@@ -26,7 +26,15 @@
 										
 							<?php if($image) : ?>
 							<a href="<?php the_permalink(); ?>"> <img class="img-responsive" src="<?php echo $image ?>"/></a>
-							<?php endif; ?>		
+							<?php endif; ?>
+                            <div class="caption">
+                                <h4 class="pull-right"><?php echo get_the_term_list($post->ID, 'anio', '', ', ', '', true); ?></h4>
+                                <h4><a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php titulo_corto($post->post_title, 27); ?></a></h4>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"><?php comentarios(); ?></p>
+                                <p><?php if(function_exists('the_ratings')) { the_ratings(); } ?></p>
+                            </div>			
 					</article><!-- #post-## -->
 			<?php endwhile; ?>
 			

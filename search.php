@@ -5,7 +5,7 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header"><?php _e('Últimas Películas del país', 'mh');?> <?php echo single_cat_title("", false);?></h1>
+                <h1 class="page-header"><?php _e('Resultados de búsqueda para', 'mh');?> <?php echo esc_attr(get_search_query()); ?></h1>
             </div>
         </div>
         <!-- /.row -->
@@ -26,15 +26,7 @@
 										
 							<?php if($image) : ?>
 							<a href="<?php the_permalink(); ?>"> <img class="img-responsive" src="<?php echo $image ?>"/></a>
-							<?php endif; ?>
-                            <div class="caption">
-                                <h4 class="pull-right"><?php echo get_the_term_list($post->ID, 'anio', '', ', ', '', true); ?></h4>
-                                <h4><a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php titulo_corto($post->post_title, 27); ?></a></h4>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right"><?php comentarios(); ?></p>
-                                <p><?php if(function_exists('the_ratings')) { the_ratings(); } ?></p>
-                            </div>	
+							<?php endif; ?>		
 					</article><!-- #post-## -->
 			<?php endwhile; ?>
 			

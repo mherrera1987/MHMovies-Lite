@@ -12,7 +12,7 @@
 				}else{
 					echo "<center><img class='img-responsive portfolio-item' src='http://placehold.it/728x90'></center>";
 				}?>	
-                <h1 class="page-header"><?php the_title();?></h1>
+                <?php the_title('<h1>', '</h1>', TRUE);?>
 				<ul class="list-inline">
 					<li class="list-inline-item"><i class="fa fa-filter"></i> <?php the_category(', '); ?></li>
 					<li class="list-inline-item"><?php if(get_the_term_list($post->ID, 'anio', TRUE)) : ?><i class="fa fa-calendar"></i> <?php echo get_the_term_list($post->ID, 'anio', '', ', ', '', true); ?><?php endif;?></li>
@@ -32,6 +32,14 @@
         	    <h2><?php _e('Sinopsis', 'mh');?></h2>
 					<?php $sinopsis = get_post_custom_values('sinopsis') ?>
 					<p><?php echo $sinopsis[0];?></p>
+                    <div class="info">
+                        <?php
+                        if(get_the_tag_list()) {
+                            echo get_the_tag_list('<span class="label label-default">','</span> <span class="label label-default">','</span>');
+                        }
+                        ?>
+                        <span class="pull-right"><?php if(function_exists('the_ratings')) { the_ratings(); } ?></span>
+                    </div>
                     <?php if($mhmovies_lite['peliculas-relacionadas'] == '1') { ?>
                         <?php get_template_part('peliculas-relacionadas');?>
                     <?php }?>

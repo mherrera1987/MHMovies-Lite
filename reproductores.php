@@ -1,7 +1,11 @@
 	<ul class="nav nav-pills">
     <li class="active"><a data-toggle="pill" href="#home"><?php _e('Trailer', 'mh');?></a></li>
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php _e('Subtitulado', 'mh');?> <span class="caret"></span></a>
+    	<?php $checkvose = get_post_custom_values("player1vose"); if($checkvose[0] != NULL): ?>
+        	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php _e('Subtitulado', 'mh');?> <span class="caret"></span></a>
+        <?php else: ?>
+        	<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="display: none;"><?php _e('Subtitulado', 'mh');?> <span class="caret"></span></a>
+        <?php endif ?>
       <ul class="dropdown-menu">
 		<?php $player1vose = get_post_custom_values("player1vose"); if($player1vose[0] != NULL){ ?>
 			<li><a href="#vose1" data-toggle="tab"><?php echo $player1vose[0]; ?></a></li>
@@ -21,8 +25,12 @@
       </ul>
     </li>
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php _e('Castellano', 'mh');?> <span class="caret"></span></a>
-      <ul class="dropdown-menu">
+    	<?php $checkcastellano = get_post_custom_values("player1castellano"); if($checkcastellano[0] != NULL): ?>
+        	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php _e('Castellano', 'mh');?> <span class="caret"></span></a>
+        <?php else: ?>
+        	<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="display: none;"><?php _e('Castellano', 'mh');?> <span class="caret"></span></a>
+        <?php endif ?>
+        <ul class="dropdown-menu">
 		<?php $player1castellano = get_post_custom_values("player1castellano"); if($player1castellano[0] != NULL){ ?>
 			<li><a href="#cast1" data-toggle="tab"><?php echo $player1castellano[0]; ?></a></li>
 		<?php } ?>
@@ -41,7 +49,11 @@
       </ul>
     </li>
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php _e('Latino', 'mh');?> <span class="caret"></span></a>
+    	<?php $checklatino = get_post_custom_values("player1latino"); if($checklatino[0] != NULL): ?>
+        	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php _e('Latino', 'mh');?> <span class="caret"></span></a>
+        <?php else: ?>
+        	<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="display: none;"><?php _e('Latino', 'mh');?> <span class="caret"></span></a>
+        <?php endif ?>
       <ul class="dropdown-menu">
 		<?php $player1latino = get_post_custom_values("player1latino"); if($player1latino[0] != NULL){ ?>
 			<li><a href="#lat1" data-toggle="tab"><?php echo $player1latino[0]; ?></a></li>
